@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Poppins","sans-serif";
+}
+body {
+    position: relative;
+    display: flex;
+    
+    justify-content: center;
+    background-image:url("https://www.theindiaforum.in/sites/default/files/field/image/2022/06/21/ramkumar-radhakrishnan-wikimedia-1622193304-1622193304.jpeg");
+    align-items:center;
+    min-height:100vh;
+  }
+
+  ::selection{
+    color: #04AA6D;
+    background: #ddd;
+  }
+  .form{
+    position: relative;
+    background: #f2f3f7;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 12px;
+    box-shadow: -3px 3px 10px -5px rgbs(0,0,0,0,2);
+    padding: 30px 30px;
+  }
+  .form h2{
+    font-size: 30px;
+    font-weight: 700;
+  }
+  .form form .error-text{
+    display: none;
+    color: #851923;
+    padding: 4px 6px;
+    text-align: center;
+    border-radius: 4px;
+    background: #ffe3e5;
+    border: 1px solid #dfa5ad;
+    margin-bottom: 8px;
+  }
+ 
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Add padding to containers */
+  .container {
+    padding:50px;
+    background-image:url("https://www.theindiaforum.in/sites/default/files/field/image/2022/06/21/ramkumar-radhakrishnan-wikimedia-1622193304-1622193304.jpeg");
+  }
+  
+  /* Full-width input fields */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Overwrite default styles of hr */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }
+  
+  /* Set a style for the submit button */
+  .registerbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .registerbtn:hover {
+    opacity: 1;
+  }
+  
+  /* Add a blue text color to links */
+  a {
+    color: dodgerblue;
+  }
+  
+  /* Set a grey background color and center the text of the "sign in" section */
+  .signin {
+    background-color: #f1f1f1;
+    text-align: center;
+  }
