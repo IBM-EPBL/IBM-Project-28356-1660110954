@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+  body {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: left;
+    background: #aaa;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Manrope", "Arial";
+  }
+  
+  .container {
+    width: fit-content;
+    /* width: auto; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: 1.6vh;
+  }
+  .container .bar {
+    --bg:#f0f2f5;
+    --bg-secundary:#c4c8cb40;
+    --bg-fade:#071d3510;
+    --color:#445261;
+    min-width: 6em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75em;
+    color: #445261;
+    background: var(--bg);
+    padding: 0 2em 0 2em;
+    border-radius: 8px;
+    box-shadow: 0 8px 8px -4px #00000040;
+    overflow: auto;
+    transition: all ease 0.5s;
+  }
+  .container .bar.opened .icon {
+    justify-content: flex-start;
+  }
+  .container .bar.opened .icon .text {
+    display: block;
+  }
+  .container .bar .icon {
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    padding: 1.5em;
+    border-radius: 8px;
+    background: var(--bg-secundary);
+    transition: all ease 0.5s;
+  }
+  .container .bar .icon:hover {
+    color: black;
+    border: 1px solid black;
+  }
+  .container .bar .icon.signout {
+    margin-top: auto;
+    margin-bottom: 10%;
+    color: #f05;
+    background: #ff005510;
+  }
+  .container .bar .icon .text {
+    font-size: 1.5em;
+    font-weight: 700;
+    display: none;
+    animation: move-text ease 0.5s forwards;
+  }
+  
+  .social {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+  }
+  .social .button {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  @keyframes move-text {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes move-text-out {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    
+  }
