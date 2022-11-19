@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Healthy Harvest</title>
+      <link rel="stylesheet" href="../static/css/styles.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/x-icon" href="../static/img/logo-white-fav.png">
+   </head>
+   <body>
+        <div style="display:flex;align-items: center;justify-items: center;flex-direction: column;">
+        <div class="wrapper">
+            <div class="title-text">
+                <div class="title login">
+                Help us identify you!
+                </div>
+                <div class="title signup">
+                Please Join Us!
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login">Login</label>
+                <label for="signup" class="slide signup">Signup</label>
+                <div class="slider-tab"></div>
+                </div>
+                <div class="form-inner">
+                <form method="post" action="/login" class="login"><br>
+                    <div class="field">
+                        <input type="email" name="loginEmail" id="loginEmail" placeholder="Email" required>
+                    </div><br>
+                    <div class="field">
+                        <input type="password" name="loginPassword" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <br>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Login">
+                    </div><br>
+                    <div class="signup-link">
+                        Not a member? <a href="">Signup now</a>
+                    </div>
+                </form>
+                <form method="Post" action="/signup" class="signup">
+                    <div class="field">
+                        <input type="text" name="username" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="field">
+                        <input type="email" name="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" required>
+                    </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" onclick="checkPassword();" value="Signup">
+                    </div><br>
+                    <div>
+                        <img src="../static/img/googlesingin.png" style="height: 50px;width:335px;cursor:pointer;"  onclick="window.location.pathname='/login_using_google'">
+                    </div>
+                </form>
+                </div>      
+            </div>
+        </div><br>
+        <div style="color: red;font-size: 25px;animation: fadeOut 4s;animation-fill-mode: forwards;">{{ msg }}</div>
+    </div>
+      <script>
+         function checkPassword() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirmPassword').value;
+            console.log(password+" "+confirmPassword);
+            if (password!=confirmPassword) {
+               alert("Password and Confirm Password are not same");
+               event.preventDefault();
+            }
+         }
+         const loginText = document.querySelector(".title-text .login");
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+   </body>
+</html>
